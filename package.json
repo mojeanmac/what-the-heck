@@ -1,0 +1,22 @@
+{
+  "name": "whattheheck",
+  "version": "1.0.0",
+  "description": "A self-censorship tool that helps users check their text.",
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "keywords": [
+    "self-censorship",
+    "text-checker",
+    "tool"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "vite": "^4.0.0"
+  }
+}
