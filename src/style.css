@@ -22,7 +22,7 @@ h1, h2 {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 90%;
-  max-width: 800px;
+  max-width: 1000px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   max-height: 90%;
@@ -88,13 +88,19 @@ button:hover {
   padding: 15px;
   gap: 10px;
   border-radius: 8px;
-  width: fit-content; /* Adjust width to fit text content */
-  margin: 0 auto; /* Center the box horizontally */
+  margin: 0 auto;
+  width: fit-content;
+}
+
+#approval img {
+  float: left;
+  margin-right: 15px;
+  text-align: left;
 }
 
 #approval p {
   text-align: center; /* Center the paragraph text */
-  margin: 0 auto; /* Remove default margin */
+  margin: 0 auto;
 }
 
 p {

@@ -5,6 +5,7 @@ import no from './assets/no.png';
 import bb from './assets/bb.png';
 import gif1984 from './assets/1984.gif';
 import trophy from './assets/trophy.gif';
+import scp from './assets/scp.png';
 
 document.getElementById('checkButton').addEventListener('click', async () => {
   const inputText = document.getElementById('inputText').value;
@@ -144,4 +145,27 @@ document.getElementById('checkButton').addEventListener('click', async () => {
   }
 
   await main();
+});
+
+// Add event listener for scpCheckbox to update description and background
+scpCheckbox.addEventListener('change', () => {
+  const descElement = document.getElementById('desc');
+
+  if (scpCheckbox.checked) {
+    descElement.innerHTML = `
+      Tired of wondering whether your papers, grant proposals, or documentation will be flagged for “unacceptable” language? 
+      What the Heck dot Tech is a lightweight, browser-based tool that instantly scans any block of text against the evolving 
+      list of over 250 words and phrases being purged from U.S. government documents; terms ranging from “███████ ██████” 
+      and “████████” to "██████,” "████████,” and “████ ██ ██████!”
+    `;
+    document.body.style.backgroundImage = `url(${scp})`;
+  } else {
+    descElement.innerHTML = `
+      Tired of wondering whether your papers, grant proposals, or documentation will be flagged for “unacceptable” language? 
+      What the Heck dot Tech is a lightweight, browser-based tool that instantly scans any block of text against the evolving 
+      list of over 250 words and phrases being purged from U.S. government documents; terms ranging from “climate change” 
+      and “abortion” to "female,” "vaccines,” and “Gulf of Mexico!”
+    `;
+    document.body.style.backgroundImage = ''; // Reset to default background
+  }
 });
