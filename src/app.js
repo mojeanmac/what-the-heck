@@ -4,6 +4,7 @@ import yes from './assets/yes.png';
 import no from './assets/no.png';
 import bb from './assets/bb.png';
 import gif1984 from './assets/1984.gif';
+import trophy from './assets/trophy.gif';
 
 document.getElementById('checkButton').addEventListener('click', async () => {
   const inputText = document.getElementById('inputText').value;
@@ -15,7 +16,8 @@ document.getElementById('checkButton').addEventListener('click', async () => {
   const summaryDiv = document.getElementById('summary');
 
   approvalDiv.innerHTML = ''; // Clear the approval div
-  approvalDiv.style.background = ''; // Reset background color
+  approvalDiv.style.display = 'none';
+
   suggestionsDiv.innerHTML = ''; // Clear the suggestions div
   gifsDiv.innerHTML = ''; // Clear the gifs div
   summaryDiv.innerHTML = ''; // Clear the summary div
@@ -42,11 +44,11 @@ document.getElementById('checkButton').addEventListener('click', async () => {
     : "Sanitize the text that follows: ";
   const modifiedInputText = prompt + '\n' + prefix + inputText;
 
-  const ai = new GoogleGenAI({ apiKey: "AIzaSyCCaFFr1JcBnGpvQce-RztdoCUC3kLFufE" });
+  const ai = new GoogleGenAI({ apiKey: "AIzaSyBlLuCeFtsrwFg6htyRE9TqJEzSQhFtzT0" });
 
   async function main() {
     const response = await ai.models.generateContent({
-      model: "gemini-2.5-pro-exp-03-25",
+      model: "gemini-2.5-pro-preview-03-25",
       contents: modifiedInputText,
       config:  {
         temperature: 1.2,
@@ -98,8 +100,9 @@ document.getElementById('checkButton').addEventListener('click', async () => {
       `;
       responseDiv.innerHTML = '';
       gifsDiv.innerHTML = `
-        <img src=${gif1984} alt="1984" style="height: 200px;">
-        <img src=${bb} alt="big brother is watching" style="height: 200px;">
+        <img src=${gif1984} alt="1984" style="height: 175px;">
+        <img src=${bb} alt="big brother is watching" style="height: 175px;">
+        <img src=${trophy} alt="Trophy" style="height: 175px;">
       `; // Show the 1984 gif
       suggestionsDiv.innerHTML = ''; // Clear the suggestions div
     } else {
@@ -107,7 +110,7 @@ document.getElementById('checkButton').addEventListener('click', async () => {
       approvalDiv.style.background = 'rgba(255, 0, 0, 0.2)';
       approvalDiv.innerHTML = `
         <img src=${no} alt="Not Safe" style="width: 50px; height: 50px;">
-        <p>Unfortunately your input is too woke, here are some suggestions to make it more patriotic:</p>
+        <p>Unfortunately your input is too woke, here are some patriotic suggestions:</p>
       `;
 
       // Update suggestions div if safety_suggestions are provided
@@ -130,13 +133,14 @@ document.getElementById('checkButton').addEventListener('click', async () => {
         responseDiv.textContent = ''; // Clear the response text if no sanitized input
       }
     }
+    // Show the approval div
+    approvalDiv.style.display = 'flex';
 
     // Add summary section
     summaryDiv.innerHTML = `
       <h2>Summary</h2>
       <p>${result.safety_desc}</p>
     `;
-    responseDiv.appendChild(summaryDiv);
   }
 
   await main();
