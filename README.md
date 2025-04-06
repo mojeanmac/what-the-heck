@@ -1,12 +1,13 @@
 # What the Heck
 
 ## Overview
-What the Heck is a self-censorship tool designed to help users evaluate and modify their text input. The application provides a user-friendly interface where users can enter text, check it for potentially sensitive content, and receive feedback.
+What the Heck is a self-censorship tool designed to help academics evaluate and modify their text input according to (DOGE's banned words list)[https://pen.org/banned-words-list/]. The application provides a user-friendly interface where users can enter text, check it for potentially sensitive content, and receive feedback.
 
 ## Features
 - Text input area for user entries
 - Button to check the text for sensitive content
 - Dynamic response display based on user input
+- SCP MODE!
 
 ## Installation
 To get started with the project, clone the repository and install the necessary dependencies:
@@ -33,8 +34,10 @@ whattheheck
 │   └── favicon.ico
 ├── src
 │   ├── app.js        # Main JavaScript logic
+│   ├── prompt.js     # Prompt supplied to Gemini
 │   ├── style.css     # Styles for the application
-│   └── index.html    # Main HTML document
+│   ├── index.html    # Main HTML document
+│   └── assets        # Our images
 ├── vite.config.js    # Vite configuration file
 ├── package.json      # npm configuration file
 └── README.md         # Project documentation

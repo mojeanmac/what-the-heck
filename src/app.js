@@ -5,14 +5,13 @@ import no from './assets/no.png';
 import bb from './assets/bb.png';
 import gif1984 from './assets/1984.gif';
 import trophy from './assets/trophy.gif';
-import scp from './assets/scp.png';
+import scp from './assets/scp.jpg';
 
-document.getElementById('checkButton').addEventListener('click', async () => {
+async function run(checking) {
   const inputText = document.getElementById('inputText').value;
   const responseDiv = document.getElementById('response');
   const approvalDiv = document.getElementById('approval');
   const suggestionsDiv = document.getElementById('suggestions');
-  const scpCheckbox = document.getElementById('scpCheckbox');
   const gifsDiv = document.getElementById('gifs');
   const summaryDiv = document.getElementById('summary');
 
@@ -28,8 +27,13 @@ document.getElementById('checkButton').addEventListener('click', async () => {
     return;
   }
 
+  const prefix = checking 
+    ? "Sanitize the text that follows: " 
+    : "Sanitize the text that follows with Full Censorship: ";
+  const loading = checking ? "Checking" : "Redacting";
+
   // Add loading animation
-  responseDiv.innerHTML = 'Checking<span class="dots"></span>';
+  responseDiv.innerHTML = `${loading}<span class="dots"></span>`;
   let dotsInterval = setInterval(() => {
     const dots = responseDiv.querySelector('.dots');
     if (dots.textContent.length >= 3) {
@@ -40,9 +44,6 @@ document.getElementById('checkButton').addEventListener('click', async () => {
   }, 500);
 
   // Prepend the appropriate prefix based on the checkbox state
-  const prefix = scpCheckbox.checked
-    ? "Sanitize the text that follows with Full Censorship: "
-    : "Sanitize the text that follows: ";
   const modifiedInputText = prompt + '\n' + prefix + inputText;
 
   const ai = new GoogleGenAI({ apiKey: "AIzaSyBlLuCeFtsrwFg6htyRE9TqJEzSQhFtzT0" });
@@ -145,27 +146,32 @@ document.getElementById('checkButton').addEventListener('click', async () => {
   }
 
   await main();
+}
+
+document.getElementById('checkButton').addEventListener('click', async () => {
+  const descElement = document.getElementById("desc");
+
+  descElement.innerHTML = `
+  Tired of wondering whether your papers, grant proposals, or documentation will be flagged for “unacceptable” language? 
+  What the Heck dot Tech is a lightweight, browser-based tool that instantly scans any block of text against the evolving 
+  list of over 250 words and phrases being purged from U.S. government documents; terms ranging from “climate change” 
+  and “abortion” to "female,” "vaccines,” and “Gulf of Mexico!”
+  `;
+  document.body.style.backgroundImage = ''; // Reset to default background
+
+  await run(true);
 });
 
-// Add event listener for scpCheckbox to update description and background
-scpCheckbox.addEventListener('change', () => {
-  const descElement = document.getElementById('desc');
+document.getElementById('redactButton').addEventListener('click', async () => {
+  const descElement = document.getElementById("desc");
 
-  if (scpCheckbox.checked) {
-    descElement.innerHTML = `
-      Tired of wondering whether your papers, grant proposals, or documentation will be flagged for “unacceptable” language? 
-      What the Heck dot Tech is a lightweight, browser-based tool that instantly scans any block of text against the evolving 
-      list of over 250 words and phrases being purged from U.S. government documents; terms ranging from “███████ ██████” 
-      and “████████” to "██████,” "████████,” and “████ ██ ██████!”
-    `;
-    document.body.style.backgroundImage = `url(${scp})`;
-  } else {
-    descElement.innerHTML = `
-      Tired of wondering whether your papers, grant proposals, or documentation will be flagged for “unacceptable” language? 
-      What the Heck dot Tech is a lightweight, browser-based tool that instantly scans any block of text against the evolving 
-      list of over 250 words and phrases being purged from U.S. government documents; terms ranging from “climate change” 
-      and “abortion” to "female,” "vaccines,” and “Gulf of Mexico!”
-    `;
-    document.body.style.backgroundImage = ''; // Reset to default background
-  }
+  descElement.innerHTML = `
+    Tired of wondering whether your papers, grant proposals, or documentation will be flagged for “unacceptable” language? 
+    What the Heck dot Tech is a lightweight, browser-based tool that instantly scans any block of text against the evolving 
+    list of over 250 words and phrases being purged from U.S. government documents; terms ranging from “███████ ██████” 
+    and “████████” to "██████,” "████████,” and “████ ██ ██████!”
+  `;
+  document.body.style.backgroundImage = `url(${scp})`;
+
+  await run(false);
 });
