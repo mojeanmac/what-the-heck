@@ -38,8 +38,13 @@ textarea {
   font-size: 16px;
 }
 
-submit {
+#submit {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-family: 'Roboto Flex', sans-serif;
 }
 
 button {
@@ -63,8 +68,9 @@ button:hover {
 }
 
 #gifs {
+  margin-top: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -77,6 +83,16 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 8px;
+  width: fit-content; /* Adjust width to fit text content */
+  margin: 0 auto; /* Center the box horizontally */
+}
+
+#approval p {
+  text-align: center; /* Center the paragraph text */
+  margin: 0; /* Remove default margin */
 }
 
 p {
@@ -92,4 +108,9 @@ p {
   max-width: 90%;
   margin: 0 auto;
   font-size: 18px;
+}
+
+.dots {
+  display: inline-block;
+  font-weight: bold;
 }
