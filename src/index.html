@@ -11,22 +11,24 @@
 </head>
 <body>
   <div class="container">
-    <h1>What the Heck: A Self-Censorship Tool!</h1>
+    <h1>What the H*ck: A Self-Censorship Tool.</h1>
     <p>Tired of wondering whether your papers, grant proposals, or documentation will be flagged for “unacceptable” language?
-      What the Heck dot Tech is a lightweight, browser-based tool that instantly scans any block of text against the ever-evolving
-      list of more than 250 words and phrases reportedly being purged from U.S. government documents;
-      terms ranging from “climate change” and “abortion” to “Native American,” “disability,” and “Gulf of Mexico.”</p>
+      What the Heck dot Tech is a lightweight, browser-based tool that instantly scans any block of text against the evolving
+      list of over 250 words and phrases being purged from U.S. government documents;
+      terms ranging from “climate change” and “abortion” to "female,” "vaccines,” and “Gulf of Mexico!”</p>
     <!-- <img src="assets/bb.png" alt="What the Heck dot Tech logo" width=50%> -->
     <textarea id="inputText" placeholder="Enter your text here..."></textarea>
     <div id="submit">
       <button id="checkButton">Check Text</button>
       <label for="scpCheckbox">
         <input type="checkbox" id="scpCheckbox">
-        SCP-style
+        SCP Mode
       </label>
     </div>
-    <div id="approval"></div>
-    <div id="response"></div>
+    <div class="result" id="approval"></div>
+    <div class="result" id="suggestions"></div>
+    <div class="result" id="response"></div>
+    <div class="result" id="gifs"></div>
   </div>
   <script type="module" src="app.js"></script>
 </body>

@@ -10,7 +10,7 @@ body {
   background-size: cover;
 }
 
-h1 {
+h1, h2 {
   font-family: 'Roboto Flex', sans-serif;
 }
 
@@ -24,6 +24,8 @@ h1 {
   max-width: 800px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  max-height: 90%;
+  overflow-y: auto;
 }
 
 textarea {
@@ -56,8 +58,25 @@ button:hover {
 
 #response {
   margin-top: 20px;
-  font-size: 16px;
   text-align: left;
+  font-family: Consolas, monospace;
+}
+
+#gifs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#response img {
+  display: block;
+  margin: 0 auto;
+}
+
+#approval {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 p {
@@ -68,15 +87,9 @@ p {
   padding-bottom: 10px;
 }
 
-#approval {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  margin: auto;
-  width: 90%;
-}
-
-#approval img {
-  margin-right: 10px;
+.result {
+  text-align: justify;
+  max-width: 90%;
+  margin: 0 auto;
+  font-size: 18px;
 }
