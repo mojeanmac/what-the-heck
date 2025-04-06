@@ -1,5 +1,5 @@
 {
-  "name": "whattheheck",
+  "name": "what-the-heck",
   "version": "1.0.0",
   "description": "A self-censorship tool that helps users check their text.",
   "main": "src/app.js",
@@ -13,10 +13,12 @@
     "text-checker",
     "tool"
   ],
-  "author": "Your Name",
+  "author": "Bugs LTD",
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
-    "vite": "^4.0.0"
+    "vite": "^4.5.12"
+  },
+  "dependencies": {
+    "@google/genai": "^0.7.0"
   }
 }

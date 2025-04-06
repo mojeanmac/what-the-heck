@@ -13,7 +13,7 @@ To get started with the project, clone the repository and install the necessary 
 
 ```bash
 git clone <repository-url>
-cd whattheheck
+cd what-the-heck
 npm install
 ```
 
@@ -21,7 +21,7 @@ npm install
 To run the application in development mode, use the following command:
 
 ```bash
-npm run dev
+npx vite
 ```
 
 This will start the Vite development server, and you can access the application at `http://localhost:3000`.
