@@ -1,7 +1,7 @@
 # What the Heck
 
 ## Overview
-What the Heck is a self-censorship tool designed to help academics evaluate and modify their text input according to (DOGE's banned words list)[https://pen.org/banned-words-list/]. The application provides a user-friendly interface where users can enter text, check it for potentially sensitive content, and receive feedback.
+What the Heck is a self-censorship tool designed to help academics evaluate and modify their text input according to [DOGE's banned words list](https://pen.org/banned-words-list/). The application provides a user-friendly interface where users can enter text, check it for potentially sensitive content, and receive feedback.
 
 ## Features
 - Text input area for user entries
