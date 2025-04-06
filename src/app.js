@@ -152,10 +152,7 @@ document.getElementById('checkButton').addEventListener('click', async () => {
   const descElement = document.getElementById("desc");
 
   descElement.innerHTML = `
-  Tired of wondering whether your papers, grant proposals, or documentation will be flagged for “unacceptable” language? 
-  What the Heck dot Tech is a lightweight, browser-based tool that instantly scans any block of text against the evolving 
-  list of over 250 words and phrases being purged from U.S. government documents; terms ranging from “climate change” 
-  and “abortion” to "female,” "vaccines,” and “Gulf of Mexico!”
+  Tired of wondering whether your papers, grant proposals, or documentation will be flagged for “unacceptable” language? What the Heck dot Tech is a lightweight, browser-based tool that instantly scans any block of text against the evolving list of over 250 words and phrases being purged from U.S. government documents, including terms such as “climate change,” “abortion,” “female,” “vaccines,” and “Gulf of Mexico!”
   `;
   document.body.style.backgroundImage = ''; // Reset to default background
 
@@ -166,10 +163,7 @@ document.getElementById('redactButton').addEventListener('click', async () => {
   const descElement = document.getElementById("desc");
 
   descElement.innerHTML = `
-    Tired of wondering whether your papers, grant proposals, or documentation will be flagged for “unacceptable” language? 
-    What the Heck dot Tech is a lightweight, browser-based tool that instantly scans any block of text against the evolving 
-    list of over 250 words and phrases being purged from U.S. government documents; terms ranging from “███████ ██████” 
-    and “████████” to "██████,” "████████,” and “████ ██ ██████!”
+    Tired of wondering whether your papers, grant proposals, or documentation will be flagged for “unacceptable” language? What the Heck dot Tech is a lightweight, browser-based tool that instantly scans any block of text against the evolving list of over 250 words and phrases being purged from U.S. government documents, including terms such as “███████ ██████,” “████████,” “██████,” "████████,” and “████ ██ ██████!”
   `;
   document.body.style.backgroundImage = `url(${scp})`;
 
