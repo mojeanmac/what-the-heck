@@ -46,11 +46,11 @@ async function run(checking) {
   // Prepend the appropriate prefix based on the checkbox state
   const modifiedInputText = prompt + '\n' + prefix + inputText;
 
-  const ai = new GoogleGenAI({ apiKey: "AIzaSyBlLuCeFtsrwFg6htyRE9TqJEzSQhFtzT0" });
+  const ai = new GoogleGenAI({ apiKey: "AIzaSyCCaFFr1JcBnGpvQce-RztdoCUC3kLFufE" });
 
   async function main() {
     const response = await ai.models.generateContent({
-      model: "gemini-2.5-pro-preview-03-25",
+      model: "gemini-2.5-pro-exp-03-25",
       contents: modifiedInputText,
       config:  {
         temperature: 1.2,
