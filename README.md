@@ -1,12 +1,14 @@
 # What the Heck
+http://whattheheck.tech/
 
 ## Overview
-What the Heck is a self-censorship tool designed to help academics evaluate and modify their text input according to [DOGE's banned words list](https://pen.org/banned-words-list/). The application provides a user-friendly interface where users can enter text, check it for potentially sensitive content, and receive feedback.
+What the Heck is a self-censorship tool designed to help ~~academics~~ REAL AMERICAN PATRIOTS evaluate and modify their text input according to [DOGE's banned words list](https://pen.org/banned-words-list/). The application provides a user-friendly interface where users can enter text, check it for content, and receive feedback.
 
 ## Features
 - Text input area for user entries
 - Button to check the text for sensitive content
 - Dynamic response display based on user input
+- The POWER of Gemini experimental API
 - SCP MODE!
 
 ## Installation
@@ -47,4 +49,4 @@ whattheheck
 Contributions are welcome! Please open an issue or submit a pull request for any enhancements or bug fixes.
 
 ## License
-This project is licensed under the MIT License.
+THIS IS A PARODY.
